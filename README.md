@@ -135,15 +135,7 @@ chmod 444 /root/86237.txt
 25 - Create a file with name /root/86198.dat and with a size of 861980 bytes:
 dd if=/dev/zero of=/root/86198.dat bs=1 count=861980
 
-26 - Create a new /dev/sdc1 partition on the drive /dev/sdc. Format the partition with ext2 filesystem and mount it to the /mnt folder in read-only mode:
-printf "n\np\n1\n\n\nw\n" | fdisk /dev/sdc
-mkfs.ext2 /dev/sdc1
-mkdir -p /mnt
-mount -o ro /dev/sdc1 /mnt
 
-27 - Add IPv4 subnet to firewalld home zone permanently:
-firewall-cmd --permanent --zone=home --add-source=10.250.250.0/24
-firewall-cmd --reload
 
 
 
